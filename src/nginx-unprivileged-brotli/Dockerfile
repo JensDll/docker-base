@@ -21,5 +21,4 @@ FROM nginxinc/nginx-unprivileged:${NGINX_VERSION}-alpine
 
 ARG NGINX_VERSION
 
-RUN apk -U upgrade
 COPY --from=ngx_brotli /compile/nginx-${NGINX_VERSION}/objs/ngx_http_brotli*.so /usr/lib/nginx/modules/

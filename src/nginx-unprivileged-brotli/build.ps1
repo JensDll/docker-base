@@ -19,4 +19,4 @@ docker buildx bake $target --file "$PSScriptRoot/../docker-bake.hcl" --push `
   --set "$target.context=$PSScriptRoot" `
   --set "*.platform=$platform" `
   --set "$target.args.NGINX_VERSION=$NginxVersion" `
-  --set "$target.tags=${repository}:$target.$NginxVersion-alpine"
+  --set "$target.tags=${repository}:$target-$NginxVersion-alpine"
