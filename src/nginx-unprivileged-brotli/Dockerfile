@@ -1,6 +1,6 @@
 ARG NGINX_VERSION
 
-FROM nginxinc/nginx-unprivileged:${NGINX_VERSION}-alpine as ngx_brotli
+FROM --platform=$BUILDPLATFORM nginxinc/nginx-unprivileged:${NGINX_VERSION}-alpine as ngx_brotli
 
 USER root
 
@@ -17,7 +17,7 @@ RUN ./configure --with-compat --add-dynamic-module=../ngx_brotli
 RUN make modules
 
 # Final image
-FROM nginxinc/nginx-unprivileged:${NGINX_VERSION}-alpine
+FROM --platform=$BUILDPLATFORM nginxinc/nginx-unprivileged:${NGINX_VERSION}-alpine
 
 ARG NGINX_VERSION
 
