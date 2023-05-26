@@ -4,7 +4,7 @@ param (
   [string]$Provider = 'docker',
   [string]$Repository = 'bases',
   [string]$Platform = 'linux/arm64,linux/amd64',
-  [string]$NginxVersion = '1.23.3'
+  [string]$NginxVersion = '1.24.0'
 )
 
 switch ($Provider) {
